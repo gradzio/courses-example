@@ -6,7 +6,9 @@
   "targets": {
     "build": {
       "executor": "@angular-devkit/build-angular:browser",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/courses-app",
         "index": "apps/courses-app/src/index.html",
@@ -18,7 +20,9 @@
           "apps/courses-app/src/favicon.ico",
           "apps/courses-app/src/assets"
         ],
-        "styles": ["apps/courses-app/src/styles.scss"],
+        "styles": [
+          "apps/courses-app/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {
@@ -83,10 +87,22 @@
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/courses-app"],
+      "outputs": [
+        "coverage/apps/courses-app"
+      ],
       "options": {
         "jestConfig": "apps/courses-app/jest.config.js",
         "passWithNoTests": true
+      }
+    },
+    "deploy": {
+      "executor": "@angular/fire:deploy",
+      "options": {
+        "prerender": false,
+        "ssr": false,
+        "browserTarget": "courses-app:build:production",
+        "firebaseProject": "lowgular-courses",
+        "firebaseHostingSite": "lowgular-courses"
       }
     }
   },

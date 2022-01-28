@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "courses": "libs/courses",
     "courses-app": "apps/courses-app",
     "courses-app-e2e": "apps/courses-app-e2e"
   }

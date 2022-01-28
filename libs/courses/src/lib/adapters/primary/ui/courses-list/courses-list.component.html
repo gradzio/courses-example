@@ -1,0 +1,10 @@
+
+<ul>
+  <li *ngFor="let course of courses$ | async">{{course.title}} <button (click)="onCourseClicked(course.courseId)">X</button></li>
+</ul>
+
+<form [formGroup]="form" (ngSubmit)="onCourseSubmited(form)">
+  <input formControlName="title">
+  <textarea formConstrolName="description"></textarea>
+  <button type="submit">Add Course</button>
+</form>

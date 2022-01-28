@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lowgular-courses": {
+      "hosting": {
+        "courses-app": [
+          "lowgular-courses"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lowgular-courses"
+  }
+}
