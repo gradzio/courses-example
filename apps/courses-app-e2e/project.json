@@ -1,0 +1,28 @@
+{
+  "root": "apps/courses-app-e2e",
+  "sourceRoot": "apps/courses-app-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/courses-app-e2e/cypress.json",
+        "devServerTarget": "courses-app:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "courses-app:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/courses-app-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["courses-app"]
+}
