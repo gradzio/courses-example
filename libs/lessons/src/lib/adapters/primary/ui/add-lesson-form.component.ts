@@ -9,8 +9,11 @@ export class AddLessonFormComponent {
   constructor(@Inject(ADD_LESSON_COMMAND) private _addLesson: AddLessonCommandPort) {
   }
 
-  onLessonAdded(form:FormGroup): void {
-    this._addLesson.addLesson(new AddLessonCommand("title","description"));
-  }
 
+  onLessonSubmited(form: FormGroup): void {
+    if (form.invalid) {
+      return;
+    }
+    this._addLesson.addLesson(new AddLessonCommand(form.get("title")?.value,form.get("description")?.value));
+  }
 }

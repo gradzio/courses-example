@@ -1,6 +1,6 @@
 
 
-<form [formGroup]="form" (ngSubmit)="onLessonAdded(form)">
+<form [formGroup]="form" (ngSubmit)=" onLessonSubmited(form)">
   <input formControlName="title" type="text">
   <textarea formControlName="description"></textarea>
   <button type="submit">Add Lesson</button>
