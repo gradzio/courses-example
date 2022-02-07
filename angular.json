@@ -2,8 +2,9 @@
   "version": 2,
   "projects": {
     "courses": "libs/courses",
+    "courses-admin": "apps/courses-admin",
     "courses-app": "apps/courses-app",
     "courses-app-e2e": "apps/courses-app-e2e",
-    "courses-admin": "apps/courses-admin"
+    "students": "libs/students"
   }
 }

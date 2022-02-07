@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@courses/courses": ["libs/courses/src/index.ts"],
-      "@courses/lessons": ["libs/lessons/src/index.ts"]
+      "@courses/lessons": ["libs/lessons/src/index.ts"],
+      "@courses/students": ["libs/students/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

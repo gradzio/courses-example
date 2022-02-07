@@ -5,8 +5,7 @@ import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { CoursesListComponentModule, CoursesStateModule, FirebaseCoursesServiceModule } from '@courses/courses';
-import { AddLessonFormComponentModule, LessonsListComponentModule} from "@courses/lessons"
-import { FirebaseLessonsServiceModule, LessonsStateModule } from '@courses/lessons';
+import { LessonsListComponentModule, FirebaseLessonsServiceModule, LessonsStateModule } from "@courses/lessons";
 
 @NgModule({
   declarations: [AppComponent],
@@ -16,11 +15,9 @@ import { FirebaseLessonsServiceModule, LessonsStateModule } from '@courses/lesso
     CoursesListComponentModule,
     FirebaseCoursesServiceModule,
     CoursesStateModule,
-    AddLessonFormComponentModule,
     FirebaseLessonsServiceModule,
     LessonsStateModule,
     LessonsListComponentModule,
-    AddLessonFormComponentModule,
     FirebaseLessonsServiceModule,
     LessonsStateModule
   ],
