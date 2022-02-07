@@ -23,6 +23,7 @@
     "@lowgular/shared": "0.0.1",
     "@nrwl/angular": "13.6.1",
     "firebase": "^9.4.0",
+    "nx": "^13.7.3",
     "rxfire": "^6.0.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.0.0",
