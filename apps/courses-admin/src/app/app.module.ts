@@ -5,6 +5,7 @@ import { environment } from '../environments/environment';
 import { CoursesStateModule, FirebaseCoursesServiceModule } from '@courses/courses';
 import { AddLessonFormComponentModule, FirebaseLessonsServiceModule, LessonsStateModule } from "@courses/lessons";
 import { AppComponent } from './app.component';
+import { AddStudentComponentModule, FirebaseStudentsServiceModule, StudentsStateModule, StudentsListComponentModule } from '@courses/students';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,7 +19,11 @@ import { AppComponent } from './app.component';
     LessonsStateModule,
     AddLessonFormComponentModule,
     FirebaseLessonsServiceModule,
-    LessonsStateModule
+    StudentsStateModule,
+    FirebaseStudentsServiceModule,
+    AddStudentComponentModule,
+    StudentsListComponentModule,
+    LessonsStateModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
