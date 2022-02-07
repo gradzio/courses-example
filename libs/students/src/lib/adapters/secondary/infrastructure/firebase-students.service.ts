@@ -16,7 +16,7 @@ export class FirebaseStudentsService implements AddsStudentDtoPort, GetsAllStude
     this._client.collection('students').add(student);
   }
 
-  getAll(criterion: Partial<StudentDTO>): Observable<StudentDTO[]> {
+  getAll(criterion: Partial<StudentDTO> = {}): Observable<StudentDTO[]> {
     return this._client.collection<StudentDTO>('students').valueChanges(({idField: 'id'})).pipe(map(data => filterByCriterion(data, criterion)));
   }
 }
