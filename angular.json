@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "course-lessons": "libs/course-lessons",
     "courses": "libs/courses",
     "courses-admin": "apps/courses-admin",
     "courses-app": "apps/courses-app",

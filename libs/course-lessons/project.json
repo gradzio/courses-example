@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/course-lessons",
+  "sourceRoot": "libs/course-lessons/src",
+  "prefix": "courses",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/course-lessons"],
+      "options": {
+        "jestConfig": "libs/course-lessons/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/course-lessons/src/**/*.ts",
+          "libs/course-lessons/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
