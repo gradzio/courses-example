@@ -18,7 +18,12 @@ import { LoadAllStudentsCommandPort } from '../ports/primary/load-all-students-c
 import { LoadAllStudentsCommand } from '../ports/primary/load-all-students.command';
 
 @Injectable()
-export class StudentsState implements CreateStudentCommandPort, GetsAllStudentQueryPort, LoadAllStudentsCommandPort {
+export class StudentsState
+  implements
+    CreateStudentCommandPort,
+    GetsAllStudentQueryPort,
+    LoadAllStudentsCommandPort
+{
   private _allStudentDtoSubject: ReplaySubject<StudentDTO[]> =
     new ReplaySubject<StudentDTO[]>();
 
@@ -26,7 +31,7 @@ export class StudentsState implements CreateStudentCommandPort, GetsAllStudentQu
     @Inject(ADDS_STUDENT_DTO) private _addsStudent: AddsStudentDtoPort,
     @Inject(GETS_ALL_STUDENT_DTO) private _getsAllStudent: GetsAllStudentDtoPort
   ) {
-    this.loadAllStudents(new LoadAllStudentsCommand)
+    this.loadAllStudents(new LoadAllStudentsCommand());
   }
 
   createStudent(command: CreateStudentCommand): void {
@@ -34,10 +39,16 @@ export class StudentsState implements CreateStudentCommandPort, GetsAllStudentQu
   }
 
   getAllStudentQuery(): Observable<StudentQuery[]> {
-    return this._allStudentDtoSubject.pipe(map((dtos: StudentDTO[]) => dtos.map((dto: StudentDTO) => new StudentQuery(dto.name,dto.email))));
+    return this._allStudentDtoSubject.pipe(
+      map((dtos: StudentDTO[]) =>
+        dtos.map((dto: StudentDTO) => new StudentQuery(dto.name, dto.email))
+      )
+    );
   }
 
   loadAllStudents(command: LoadAllStudentsCommand): void {
-    this._getsAllStudent.getAll().subscribe((dtos: StudentDTO[]) => this._allStudentDtoSubject.next(dtos));
+    this._getsAllStudent
+      .getAll()
+      .subscribe((dtos: StudentDTO[]) => this._allStudentDtoSubject.next(dtos));
   }
 }
