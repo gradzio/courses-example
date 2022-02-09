@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@courses/categories": ["libs/categories/src/index.ts"],
       "@courses/course-lessons": ["libs/course-lessons/src/index.ts"],
       "@courses/courses": ["libs/courses/src/index.ts"],
       "@courses/lessons": ["libs/lessons/src/index.ts"],
