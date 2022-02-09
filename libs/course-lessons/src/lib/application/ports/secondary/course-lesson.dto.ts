@@ -1,3 +1,4 @@
 export interface CourseLessonDTO {
-  readonly lessonName: string;
+  readonly id: string;
+  readonly name: string;
 }

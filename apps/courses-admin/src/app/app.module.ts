@@ -6,6 +6,7 @@ import { CoursesStateModule, FirebaseCoursesServiceModule } from '@courses/cours
 import { AddLessonFormComponentModule, FirebaseLessonsServiceModule, LessonsStateModule } from "@courses/lessons";
 import { AppComponent } from './app.component';
 import { AddStudentComponentModule, FirebaseStudentsServiceModule, StudentsStateModule, StudentsListComponentModule } from '@courses/students';
+import { CourseLessonsStateModule, FirebaseCourseLessonsServiceModule, ManageCourseLessonsComponentModule } from '@courses/course-lessons';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,9 @@ import { AddStudentComponentModule, FirebaseStudentsServiceModule, StudentsState
     AddStudentComponentModule,
     StudentsListComponentModule,
     LessonsStateModule,
+    ManageCourseLessonsComponentModule,
+    CourseLessonsStateModule,
+    FirebaseCourseLessonsServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent],

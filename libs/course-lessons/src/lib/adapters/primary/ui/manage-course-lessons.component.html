@@ -1,6 +1,40 @@
-<form [formGroup]="form">
-  <input type="text" formControlName="courseId" /><input
-    type="text"
-    formControlName="courseName"
-  /><input type="text" formArrayName="lessons" />
+<form *ngIf="lessonIds" [formGroup]="form" (ngSubmit)="onFormSubmited(form)">
+  <div class="row">
+    <div class="file-field input-field col s12">
+      <div class="btn admin-upload-btn" (click)="addOption('lessonIds')">
+        <span>+</span>
+      </div>
+    </div>
+  </div>
+  <div class="row" formArrayName="lessonIds" *ngIf="options$ | async as options">
+    <ng-container *ngFor="let lessonControl of lessonIds.controls; let i=index">
+      <div class="col s12">Selected: {{lessonControl.value}}</div>
+      <div class="file-field input-field col s12">
+        <div class="btn admin-upload-btn btn-danger" (click)="removeOption('lessonIds', i)">
+          <span>-</span>
+        </div>
+        <div class="file-path-wrapper">
+          <select [formControlName]="i" class="file-path validate" style="display: block;">
+            <option *ngFor="let option of options" [value]="option.value">{{option.label}}</option>
+          </select>
+        </div>
+        <div *ngIf="i > 0" class="btn btn-xs" (click)="moveOption('lessonIds', i, i - 1)">
+          <i class="fa fa-arrow-up"></i>
+        </div>
+        <div *ngIf="i < lessonIds.controls.length - 1" class="btn btn-xs" (click)="moveOption('lessonIds', i, i + 1)">
+          <i class="fa fa-arrow-down"></i>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="waves-effect waves-light btn-large waves-input-wrapper">
+        <input type="submit" value="Submit" class="waves-button-input">
+      </i>
+    </div>
+  </div>
 </form>
+<ul>
+  <li *ngFor="let item of currentLessons$ | async"></li>
+</ul>
